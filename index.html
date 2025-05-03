@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxStay | Luxury Apartment Rentals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="apartmentlist.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Sign In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Perfect Luxury Apartment</h1>
+                <p class="hero-subtitle">Experience comfort and elegance in prime locations worldwide</p>
+                <div class="search-box">
+                    <form class="search-form">
+                        <div class="search-input location-selector">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location-select">
+                                <option value="" disabled selected>Apartment place</option>
+                                <option value="new-york">Phnom Penh</option>
+                                <option value="paris">Sihanouk Ville</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        
+                      
+                        
+                        
+                        
+                        <button type="submit" class="btn btn-primary search-btn">
+                            <i class="fas fa-search"></i>
+                            <span>Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore our most sought-after locations</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New York">
+                        <div class="destination-overlay">
+                            <h3>New York</h3>
+                            <p>245 properties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paris">
+                        <div class="destination-overlay">
+                            <h3>Paris</h3>
+                            <p>189 properties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dubai">
+                        <div class="destination-overlay">
+                            <h3>Dubai</h3>
+                            <p>175 properties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tokyo">
+                        <div class="destination-overlay">
+                            <h3>Tokyo</h3>
+                            <p>120 properties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-apartments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Apartments</h2>
+                <p>Handpicked properties for an exceptional stay</p>
+            </div>
+            <div class="apartments-grid">
+                <div class="apartment-card">
+                    <div class="apartment-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Luxury Downtown Apartment">
+                        <div class="apartment-badge">Featured</div>
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (128 reviews)</span>
+                        </div>
+                        <h3>Luxury Downtown Apartment</h3>
+                        <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Downtown, New York City</p>
+                        <div class="apartment-features">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-vector-square"></i> 1,200 sqft</span>
+                        </div>
+                        <div class="apartment-footer">
+                            <div class="apartment-price">
+                                <span class="price">$250</span> / night
+                            </div>
+                            <a href="apartment.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="apartment-card">
+                    <div class="apartment-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Beachfront Villa">
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (96 reviews)</span>
+                        </div>
+                        <h3>Beachfront Villa</h3>
+                        <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Miami Beach, Florida</p>
+                        <div class="apartment-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-vector-square"></i> 1,800 sqft</span>
+                        </div>
+                        <div class="apartment-footer">
+                            <div class="apartment-price">
+                                <span class="price">$350</span> / night
+                            </div>
+                            <a href="apartment.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="apartment-card">
+                    <div class="apartment-image">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Modern Loft">
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7 (84 reviews)</span>
+                        </div>
+                        <h3>Modern Loft</h3>
+                        <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Downtown, San Francisco</p>
+                        <div class="apartment-features">
+                            <span><i class="fas fa-bed"></i> 1 Bed</span>
+                            <span><i class="fas fa-bath"></i> 1 Bath</span>
+                            <span><i class="fas fa-vector-square"></i> 950 sqft</span>
+                        </div>
+                        <div class="apartment-footer">
+                            <div class="apartment-price">
+                                <span class="price">$200</span> / night
+                            </div>
+                            <a href="apartment.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container">
+                <a href="apartment-details.html" class="btn btn-outline btn-lg">View All Apartments</a>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Book your perfect apartment in 3 simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Find</h3>
+                    <p>Search for apartments in your desired location and dates</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="far fa-calendar-check"></i>
+                    </div>
+                    <h3>Book</h3>
+                    <p>Reserve your apartment with our secure booking system</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Enjoy</h3>
+                    <p>Receive check-in details and enjoy your luxury stay</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Guests Say</h2>
+                <p>Experiences from our satisfied customers</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The apartment exceeded all our expectations! The location was perfect, and the views were absolutely breathtaking. We'll definitely be back!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>New York, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Great apartment in an amazing location. Everything was as described, and the check-in process was seamless. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael">
+                        <div>
+                            <h4>Michael Brown</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The apartment was beautifully designed and had all the amenities we needed. The host was very responsive and helpful. We had a wonderful stay!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma">
+                        <div>
+                            <h4>Emma Wilson</h4>
+                            <p>Sydney, Australia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Perfect Stay?</h2>
+                <p>Join thousands of satisfied guests who have experienced our luxury apartments</p>
+                <a href="apartments.html" class="btn btn-primary btn-lg">Browse Apartments</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </div>
+                    <p>Providing luxury accommodations worldwide since 2010. Experience comfort and elegance with LuxStay.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Safety Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fifth Avenue, New York, NY 10160</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@luxstay.com</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LuxStay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

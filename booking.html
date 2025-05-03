@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | LuxStay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html" class="active">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Sign In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="apartments.html">Apartments</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="apartment.html">Luxury Downtown Apartment</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Book Your Stay</span>
+            </div>
+
+            <div class="booking-page">
+                <div class="booking-content">
+                    <section class="booking-summary">
+                        <h1>Complete Your Booking</h1>
+                        <div class="apartment-summary">
+                            <div class="apartment-summary-image">
+                                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Luxury Downtown Apartment">
+                            </div>
+                            <div class="apartment-summary-details">
+                                <h2>Luxury Downtown Apartment</h2>
+                                <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Downtown, New York City</p>
+                                <div class="apartment-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>4.9 (128 reviews)</span>
+                                </div>
+                                <div class="booking-dates">
+                                    <div class="date-item">
+                                        <span class="date-label">Check-in</span>
+                                        <span class="date-value" id="summary-check-in">May 15, 2023</span>
+                                    </div>
+                                    <div class="date-item">
+                                        <span class="date-label">Check-out</span>
+                                        <span class="date-value" id="summary-check-out">May 20, 2023</span>
+                                    </div>
+                                    <div class="date-item">
+                                        <span class="date-label">Guests</span>
+                                        <span class="date-value" id="summary-guests">2 guests</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="booking-form-section">
+                        <h2>Guest Information</h2>
+                        <form class="booking-form" id="booking-form">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="special-requests">Special Requests (optional)</label>
+                                <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="payment-section">
+                        <h2>Payment Information</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method active">
+                                <input type="radio" id="credit-card" name="payment-method" checked>
+                                <label for="credit-card">
+                                    <i class="far fa-credit-card"></i>
+                                    Credit Card
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="paypal" name="payment-method">
+                                <label for="paypal">
+                                    <i class="fab fa-paypal"></i>
+                                    PayPal
+                                </label>
+                            </div>
+                        </div>
+                        <div class="credit-card-form">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name" name="card-name">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="cancellation-policy">
+                        <h2>Cancellation Policy</h2>
+                        <p>Free cancellation before May 10, 2023. After that, you'll be charged 50% of the total booking amount if you cancel.</p>
+                    </section>
+
+                    <div class="booking-actions">
+                        <a href="apartment.html" class="btn btn-outline">Back</a>
+                        <a href="confirmation.html" class="btn btn-primary">Complete Booking</a>
+                    </div>
+                </div>
+
+                <div class="booking-sidebar">
+                    <div class="price-summary">
+                        <h2>Price Details</h2>
+                        <div class="price-item">
+                            <span>$250 x 5 nights</span>
+                            <span>$1,250</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Cleaning fee</span>
+                            <span>$100</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Service fee</span>
+                            <span>$150</span>
+                        </div>
+                        <div class="price-total">
+                            <span>Total (USD)</span>
+                            <span>$1,500</span>
+                        </div>
+                    </div>
+                    <div class="secure-booking">
+                        <div class="secure-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <p>Your payment information is encrypted and securely processed. We never store your full credit card details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </div>
+                    <p>Providing luxury accommodations worldwide since 2010. Experience comfort and elegance with LuxStay.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Safety Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fifth Avenue, New York, NY 10160</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@luxstay.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LuxStay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="booking-script.js"></script>
+</body>
+</html>

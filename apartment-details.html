@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Downtown Apartment | LuxStay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="apartment-styles.css">
+    <style>
+        /* Base Styles */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --primary-dark: #3d56bc;
+  --secondary-color: #f8f9fa;
+  --accent-color: #f72585;
+  --text-color: #2b2d42;
+  --text-light: #6c757d;
+  --success-color: #4cc9f0;
+  --border-color: #e9ecef;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Styles */
+.header {
+  background-color: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-list a {
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  color: var(--primary-color);
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  position: absolute;
+  left: 0;
+  transition: var(--transition);
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+  top: 9px;
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+  top: 18px;
+}
+
+/* Main Content */
+.main {
+  padding: 40px 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5px;
+}
+
+.breadcrumbs a {
+  color: var(--text-light);
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary-color);
+}
+
+.separator {
+  margin: 0 10px;
+  font-size: 0.8rem;
+}
+
+.current {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Apartment Header */
+.apartment-header {
+  margin-bottom: 30px;
+}
+
+.apartment-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.apartment-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.location,
+.rating,
+.share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location i,
+.rating i {
+  color: var(--primary-color);
+}
+
+.stars {
+  color: #ffc107;
+  display: flex;
+  gap: 2px;
+}
+
+.share-btn,
+.save-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.share-btn:hover,
+.save-btn:hover {
+  color: var(--primary-color);
+}
+
+/* Apartment Gallery */
+.apartment-gallery {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.gallery-main {
+  width: 100%;
+  height: 500px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.05);
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 80px;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  opacity: 0.7;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.view-all-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Apartment Content Layout */
+.apartment-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* Apartment Details */
+.apartment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Host Section */
+.host-section {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+}
+
+.host-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.host-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.host-text p {
+  color: var(--text-light);
+}
+
+.host-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.host-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.key-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.feature p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Description Section */
+.description-section {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+}
+
+.description-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.description-content p {
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+/* Amenities Section */
+.amenities-section {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+}
+
+.amenities-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amenity i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.show-all-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.show-all-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Location Section */
+.location-section {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+}
+
+.location-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  height: 400px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.location-map {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.location-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.location-details p {
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+/* Reviews Section */
+.reviews-section {
+  padding-bottom: 30px;
+}
+
+.reviews-header {
+  margin-bottom: 20px;
+}
+
+.reviews-header h2 {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviews-header h2 i {
+  color: #ffc107;
+}
+
+.review-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.review-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviewer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.reviewer p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.review-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.show-all-reviews-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.show-all-reviews-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Booking Card */
+.booking-card {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+}
+
+.booking-card-inner {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 24px;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.booking-price {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.booking-price .price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.booking-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.booking-rating i {
+  color: #ffc107;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.date-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.check-in, .check-out {
+  padding: 15px;
+}
+
+.check-in {
+  border-right: 1px solid var(--border-color);
+}
+
+.date-picker label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.date-picker input {
+  width: 100%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.date-picker input:focus {
+  outline: none;
+}
+
+.guests-dropdown {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 15px;
+}
+
+.guests-dropdown label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.guests-dropdown select {
+  width: 100%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  appearance: none;
+  background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") no-repeat right 0.7em top 50%;
+  background-size: 0.65em auto;
+}
+
+.guests-dropdown select:focus {
+  outline: none;
+}
+
+.reserve-btn {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.reserve-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.booking-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.price-details {
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Footer */
+.footer {
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--text-light);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.contact-info {
+  list-style: none;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Enhanced Mobile Responsiveness */
+
+/* General Mobile Styles */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .apartment-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .booking-card {
+    position: static;
+    margin-top: 30px;
+  }
+  
+  .review-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header Mobile Styles */
+  .nav-list {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .header-actions {
+    display: none;
+  }
+  
+  /* Mobile Menu Styles */
+  .nav-list.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    z-index: 100;
+    text-align: center;
+  }
+  
+  .nav-list.active li {
+    margin-bottom: 15px;
+  }
+  
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  /* Apartment Header Mobile */
+  .apartment-title {
+    font-size: 1.8rem;
+  }
+  
+  .apartment-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  /* Gallery Mobile */
+  .gallery-main {
+    height: 300px;
+  }
+  
+  .thumbnail {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .view-all-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Host Section Mobile */
+  .host-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .host-avatar {
+    order: -1;
+  }
+  
+  .key-features {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Amenities Mobile */
+  .amenities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Map Mobile */
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Very Small Screens */
+  .main {
+    padding: 20px 0;
+  }
+  
+  .apartment-title {
+    font-size: 1.5rem;
+  }
+  
+  .gallery-main {
+    height: 250px;
+  }
+  
+  .thumbnail {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-category {
+    flex-wrap: wrap;
+  }
+  
+  .progress-bar {
+    order: 1;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .date-picker {
+    grid-template-columns: 1fr;
+  }
+  
+  .check-in {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+  .thumbnail:hover {
+    transform: none;
+  }
+  
+  /* Make buttons and interactive elements larger for touch */
+  .btn, 
+  .show-all-btn,
+  .show-all-reviews-btn,
+  .read-more-btn {
+    min-height: 44px;
+  }
+  
+  .date-picker input,
+  .guests-dropdown select {
+    min-height: 44px;
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+}
+
+/* Improve scrolling on mobile */
+@media (max-width: 768px) {
+  .gallery-thumbnails {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Improve tap targets */
+  .nav-list a,
+  .footer-links a {
+    padding: 8px 0;
+    display: inline-block;
+  }
+  
+  /* Fix for fixed position elements on iOS */
+  .header {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 896px) and (orientation: landscape) {
+  .gallery-main {
+    height: 250px;
+  }
+  
+  .apartment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .booking-card {
+    position: static;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .booking-card,
+  .view-all-btn,
+  .show-all-btn,
+  .show-all-reviews-btn {
+    display: none;
+  }
+  
+  .apartment-content {
+    display: block;
+  }
+  
+  .gallery-main {
+    height: auto;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartmentlist.html" class="active">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Sign In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="apartments.html">Apartments</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Luxury Downtown Apartment</span>
+            </div>
+
+            <section class="apartment-header">
+                <h1 class="apartment-title">Luxury Downtown Apartment</h1>
+                <div class="apartment-meta">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Downtown, New York City</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.9 (128 reviews)</span>
+                    </div>
+                    <div class="share">
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-heart"></i>
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="apartment-gallery">
+                <div class="gallery-main">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Luxury Downtown Apartment" class="main-image">
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Living Room">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Kitchen">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c0862?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Bedroom">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Bathroom">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1560448075-bb485b067938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Balcony">
+                    </div>
+                </div>
+                <button class="view-all-btn">
+                    <i class="fas fa-th-large"></i>
+                    <span>View All Photos</span>
+                </button>
+            </section>
+
+            <div class="apartment-content">
+                <div class="apartment-details">
+                    <section class="host-section">
+                        <div class="host-info">
+                            <div class="host-text">
+                                <h2>Entire apartment hosted by Jessica</h2>
+                                <p>4 guests · 2 bedrooms · 2 beds · 2 baths</p>
+                            </div>
+                            <div class="host-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Host Jessica">
+                            </div>
+                        </div>
+                        <div class="key-features">
+                            <div class="feature">
+                                <i class="fas fa-medal"></i>
+                                <div>
+                                    <h3>Superhost</h3>
+                                    <p>Jessica is a Superhost with 4.9 rating</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h3>Great location</h3>
+                                    <p>95% of guests gave the location 5 stars</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-key"></i>
+                                <div>
+                                    <h3>Self check-in</h3>
+                                    <p>Check yourself in with the keypad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="description-section">
+                        <h2>About this space</h2>
+                        <div class="description-content">
+                            <p>Experience the height of luxury in our stunning downtown apartment. Located in the heart of New York City, this beautifully designed space offers breathtaking views of the city skyline and easy access to all major attractions.</p>
+                            <p>The apartment features high-end finishes, designer furniture, and all the amenities you need for a comfortable stay. The open-concept living area is perfect for relaxing or entertaining, while the fully equipped kitchen allows you to prepare your favorite meals.</p>
+                            <p>Both bedrooms feature premium mattresses and luxury linens to ensure a restful night's sleep. The master bedroom includes an en-suite bathroom with a rainfall shower and soaking tub.</p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                    </section>
+
+                    <section class="amenities-section">
+                        <h2>What this place offers</h2>
+                        <div class="amenities-grid">
+                            <div class="amenity">
+                                <i class="fas fa-wifi"></i>
+                                <span>High-speed WiFi</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-tv"></i>
+                                <span>65" HDTV with Netflix</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Central air conditioning</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-utensils"></i>
+                                <span>Fully equipped kitchen</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-washer"></i>
+                                <span>Washer/dryer</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Access to pool</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Fitness center</span>
+                            </div>
+                            <div class="amenity">
+                                <i class="fas fa-parking"></i>
+                                <span>Free parking</span>
+                            </div>
+                        </div>
+                        <button class="show-all-btn">Show all 22 amenities</button>
+                    </section>
+
+                    <section class="location-section">
+                        <h2>Where you'll be</h2>
+                        <div class="map-container">
+                            <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7842.6966748684235!2d103.50999835078733!3d10.6300235577444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3107e10057960059%3A0x7a87d293614c92e7!2z4Z6f4Z624Z6b4Z624Z6U4Z6L4Z6Y4Z6f4Z634Z6A4Z-S4Z6f4Z62IOGeoOGfiuGeu-GekyDhnp_hn4LhnpPhnoDhn5LhnprhnrvhnoQ!5e0!3m2!1sen!2skh!4v1746257208370!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class=""></iframe>
+                        </div>
+                        <div class="location-details">
+                            <h3>Downtown, New York City</h3>
+                            <p>Our apartment is located in the heart of downtown New York, just steps away from restaurants, shopping, and major attractions. The neighborhood is safe, vibrant, and perfect for both business and leisure travelers.</p>
+                            <p>Nearby attractions include Central Park (0.5 miles), Times Square (0.8 miles), and the Museum of Modern Art (0.3 miles).</p>
+                        </div>
+                    </section>
+
+                    <section class="reviews-section">
+                        <div class="reviews-header">
+                            <h2><i class="fas fa-star"></i> 4.9 · 128 reviews</h2>
+                        </div>
+                        <div class="review-categories">
+                            <div class="review-category">
+                                <span>Cleanliness</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 98%"></div>
+                                </div>
+                                <span>4.9</span>
+                            </div>
+                            <div class="review-category">
+                                <span>Accuracy</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 96%"></div>
+                                </div>
+                                <span>4.8</span>
+                            </div>
+                            <div class="review-category">
+                                <span>Communication</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 100%"></div>
+                                </div>
+                                <span>5.0</span>
+                            </div>
+                            <div class="review-category">
+                                <span>Location</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 98%"></div>
+                                </div>
+                                <span>4.9</span>
+                            </div>
+                            <div class="review-category">
+                                <span>Check-in</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 100%"></div>
+                                </div>
+                                <span>5.0</span>
+                            </div>
+                            <div class="review-category">
+                                <span>Value</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 94%"></div>
+                                </div>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                                        <div>
+                                            <h4>Sarah</h4>
+                                            <p>June 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>This apartment exceeded all our expectations! The location is perfect, and the views are absolutely breathtaking. Jessica was an amazing host, very responsive and helpful. The place was spotless and had everything we needed. We'll definitely be back!</p>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael">
+                                        <div>
+                                            <h4>Michael</h4>
+                                            <p>May 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Great apartment in an amazing location. Everything was as described, and the check-in process was seamless. The apartment is beautifully decorated and has all the amenities you could need. Highly recommend!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="show-all-reviews-btn">Show all 128 reviews</button>
+                    </section>
+                </div>
+
+                <div class="booking-card">
+                    <div class="booking-card-inner">
+                        <div class="booking-header">
+                            <div class="booking-price">
+                                <span class="price">$250</span> night
+                            </div>
+                            <div class="booking-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 · 128 reviews</span>
+                            </div>
+                        </div>
+                        <div class="booking-form">
+                            <div class="date-picker">
+                                <div class="check-in">
+                                    <label for="check-in-date">CHECK-IN</label>
+                                    <input type="date" id="check-in-date">
+                                </div>
+                                <div class="check-out">
+                                    <label for="check-out-date">CHECKOUT</label>
+                                    <input type="date" id="check-out-date">
+                                </div>
+                            </div>
+                            <div class="guests-dropdown">
+                                <label for="guests">GUESTS</label>
+                                <select id="guests">
+                                    <option value="1">1 guest</option>
+                                    <option value="2" selected>2 guests</option>
+                                    <option value="3">3 guests</option>
+                                    <option value="4">4 guests</option>
+                                </select>
+                            </div>
+                            <a href="booking.html" class="reserve-btn">Reserve</a>
+                            <p class="booking-note">You won't be charged yet</p>
+                        </div>
+                        <div class="price-details">
+                            <div class="price-item">
+                                <span>$250 x 5 nights</span>
+                                <span>$1,250</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Cleaning fee</span>
+                                <span>$100</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Service fee</span>
+                                <span>$150</span>
+                            </div>
+                            <div class="price-total">
+                                <span>Total</span>
+                                <span>$1,500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </div>
+                    <p>Providing luxury accommodations worldwide since 2010. Experience comfort and elegance with LuxStay.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Safety Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fifth Avenue, New York, NY 10160</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@luxstay.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LuxStay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+            const navList = document.querySelector(".nav-list");
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    navList.classList.toggle("active");
+                });
+            }
+            
+            // Gallery thumbnail functionality
+            const thumbnails = document.querySelectorAll(".thumbnail");
+            const mainImage = document.querySelector(".main-image");
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener("click", function() {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove("active"));
+                    
+                    // Add active class to clicked thumbnail
+                    this.classList.add("active");
+                    
+                    // Update main image
+                    const imgSrc = this.querySelector("img").getAttribute("src");
+                    mainImage.setAttribute("src", imgSrc);
+                });
+            });
+            
+            // Read more functionality
+            const readMoreBtn = document.querySelector(".read-more-btn");
+            if (readMoreBtn) {
+                readMoreBtn.addEventListener("click", function() {
+                    const descriptionContent = document.querySelector(".description-content");
+                    descriptionContent.classList.toggle("expanded");
+                    
+                    if (descriptionContent.classList.contains("expanded")) {
+                        this.textContent = "Read less";
+                    } else {
+                        this.textContent = "Read more";
+                    }
+                });
+            }
+            
+            // Date picker initialization
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const checkInDate = document.getElementById("check-in-date");
+            const checkOutDate = document.getElementById("check-out-date");
+            
+            if (checkInDate && checkOutDate) {
+                // Format dates as YYYY-MM-DD for input[type="date"]
+                const formatDate = (date) => {
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const day = String(date.getDate()).padStart(2, '0');
+                    return `${year}-${month}-${day}`;
+                };
+                
+                checkInDate.value = formatDate(today);
+                checkOutDate.value = formatDate(tomorrow);
+                
+                // Ensure checkout date is always after checkin date
+                checkInDate.addEventListener("change", function() {
+                    const newCheckIn = new Date(this.value);
+                    const currentCheckOut = new Date(checkOutDate.value);
+                    
+                    if (newCheckIn >= currentCheckOut) {
+                        const nextDay = new Date(newCheckIn);
+                        nextDay.setDate(nextDay.getDate() + 1);
+                        checkOutDate.value = formatDate(nextDay);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

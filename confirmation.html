@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation | LuxStay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-outline">Sign In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="confirmation-page">
+                <div class="confirmation-header">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1>Booking Confirmed!</h1>
+                    <p>Your reservation has been successfully processed.</p>
+                    <div class="confirmation-number">
+                        <span>Confirmation Number:</span>
+                        <strong>LUX-12345678</strong>
+                    </div>
+                </div>
+
+                <div class="confirmation-details">
+                    <div class="confirmation-card">
+                        <div class="confirmation-section">
+                            <h2>Reservation Details</h2>
+                            <div class="apartment-summary">
+                                <div class="apartment-summary-image">
+                                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Luxury Downtown Apartment">
+                                </div>
+                                <div class="apartment-summary-details">
+                                    <h3>Luxury Downtown Apartment</h3>
+                                    <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Downtown, New York City</p>
+                                    <div class="booking-dates">
+                                        <div class="date-item">
+                                            <span class="date-label">Check-in</span>
+                                            <span class="date-value">May 15, 2023</span>
+                                            <span class="date-time">After 3:00 PM</span>
+                                        </div>
+                                        <div class="date-item">
+                                            <span class="date-label">Check-out</span>
+                                            <span class="date-value">May 20, 2023</span>
+                                            <span class="date-time">Before 11:00 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="guest-info">
+                                        <span class="guest-label">Guests</span>
+                                        <span class="guest-value">2 guests</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-section">
+                            <h2>Payment Information</h2>
+                            <div class="payment-details">
+                                <div class="payment-method-info">
+                                    <span>Payment Method</span>
+                                    <span>Credit Card (ending in 3456)</span>
+                                </div>
+                                <div class="price-summary">
+                                    <div class="price-item">
+                                        <span>$250 x 5 nights</span>
+                                        <span>$1,250</span>
+                                    </div>
+                                    <div class="price-item">
+                                        <span>Cleaning fee</span>
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="price-item">
+                                        <span>Service fee</span>
+                                        <span>$150</span>
+                                    </div>
+                                    <div class="price-total">
+                                        <span>Total (USD)</span>
+                                        <span>$1,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-section">
+                            <h2>Host Information</h2>
+                            <div class="host-details">
+                                <div class="host-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Host Jessica">
+                                </div>
+                                <div class="host-info">
+                                    <h3>Jessica</h3>
+                                    <p>Superhost with 4.9 rating</p>
+                                    <a href="#" class="btn btn-outline btn-sm">Contact Host</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-section">
+                            <h2>Check-in Instructions</h2>
+                            <div class="check-in-instructions">
+                                <div class="instruction-item">
+                                    <div class="instruction-icon">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <div class="instruction-content">
+                                        <h3>Self check-in</h3>
+                                        <p>Check yourself in with the keypad. The code will be sent to your email 24 hours before check-in.</p>
+                                    </div>
+                                </div>
+                                <div class="instruction-item">
+                                    <div class="instruction-icon">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <div class="instruction-content">
+                                        <h3>Address</h3>
+                                        <p>123 Broadway, Apt 45, New York, NY 10001</p>
+                                        <a href="#" class="btn btn-outline btn-sm">Get Directions</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-actions">
+                        <a href="#" class="btn btn-primary btn-lg">
+                            <i class="fas fa-print"></i>
+                            Print Confirmation
+                        </a>
+                        <a href="#" class="btn btn-outline btn-lg">
+                            <i class="fas fa-calendar-alt"></i>
+                            Add to Calendar
+                        </a>
+                        <a href="index.html" class="btn btn-outline btn-lg">
+                            <i class="fas fa-home"></i>
+                            Return to Home
+                        </a>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h2>What's Next?</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Check Your Email</h3>
+                            <p>We've sent a confirmation email with all the details of your booking.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-suitcase"></i>
+                            </div>
+                            <h3>Pack Your Bags</h3>
+                            <p>Get ready for your trip! Don't forget essentials like chargers and toiletries.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <h3>Enjoy Your Stay</h3>
+                            <p>Relax and enjoy all the amenities your luxury apartment has to offer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="similar-apartments">
+                    <h2>Explore More Destinations</h2>
+                    <p>Planning your next trip? Check out these popular apartments</p>
+                    <div class="apartments-grid">
+                        <div class="apartment-card">
+                            <div class="apartment-image">
+                                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Beachfront Villa">
+                            </div>
+                            <div class="apartment-content">
+                                <div class="apartment-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (96 reviews)</span>
+                                </div>
+                                <h3>Beachfront Villa</h3>
+                                <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Miami Beach, Florida</p>
+                                <div class="apartment-footer">
+                                    <div class="apartment-price">
+                                        <span class="price">$350</span> / night
+                                    </div>
+                                    <a href="apartment.html" class="btn btn-sm btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apartment-card">
+                            <div class="apartment-image">
+                                <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Modern Loft">
+                            </div>
+                            <div class="apartment-content">
+                                <div class="apartment-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.7 (84 reviews)</span>
+                                </div>
+                                <h3>Modern Loft</h3>
+                                <p class="apartment-location"><i class="fas fa-map-marker-alt"></i> Downtown, San Francisco</p>
+                                <div class="apartment-footer">
+                                    <div class="apartment-price">
+                                        <span class="price">$200</span> / night
+                                    </div>
+                                    <a href="apartment.html" class="btn btn-sm btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-building"></i></span>
+                        <span class="logo-text">LuxStay</span>
+                    </div>
+                    <p>Providing luxury accommodations worldwide since 2010. Experience comfort and elegance with LuxStay.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apartments.html">Apartments</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Safety Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fifth Avenue, New York, NY 10160</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@luxstay.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LuxStay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
