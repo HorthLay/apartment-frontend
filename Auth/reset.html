@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password | LuxStay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-light: #4895ef;
+            --primary-dark: #3d56bc;
+            --secondary-color: #f8f9fa;
+            --accent-color: #f72585;
+            --text-color: #2b2d42;
+            --text-light: #6c757d;
+            --success-color: #4cc9f0;
+            --error-color: #e63946;
+            --border-color: #e9ecef;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .reset-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+
+        .reset-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .reset-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .reset-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .reset-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .reset-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-family: "Poppins", sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+        }
+
+        .form-input.error {
+            border-color: var(--error-color);
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            color: var(--text-light);
+        }
+
+        .input-group .form-input {
+            padding-left: 45px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            color: var(--text-light);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        .password-strength {
+            margin-top: 8px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: var(--border-color);
+            overflow: hidden;
+        }
+
+        .password-strength-meter {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        .password-strength-text {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .password-requirements {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.85rem;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        .requirement:last-child {
+            margin-bottom: 0;
+        }
+
+        .requirement i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        .requirement.met {
+            color: var(--success-color);
+        }
+
+        .requirement.met i {
+            color: var(--success-color);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:disabled {
+            background-color: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .success-text {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .back-to-login {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-to-login:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation for success message */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 480px) {
+            .reset-header {
+                padding: 25px 20px;
+            }
+
+            .reset-body {
+                padding: 20px;
+            }
+
+            .reset-title {
+                font-size: 1.3rem;
+            }
+
+            .reset-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .form-input, .btn {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-building"></i></span>
+                    <span class="logo-text">LuxStay</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="reset-card">
+            <div class="reset-header">
+                <div class="reset-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h1 class="reset-title">Reset Your Password</h1>
+                <p class="reset-subtitle">Create a new password for your account</p>
+            </div>
+
+            <div class="reset-body">
+                <form id="reset-form">
+                    <div class="form-group">
+                        <label for="new-password" class="form-label">New Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="new-password" class="form-input" placeholder="Enter your new password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="password-strength-meter" id="password-meter"></div>
+                        </div>
+                        <div class="password-strength-text" id="password-strength-text"></div>
+                        <div class="error-message" id="password-error">Password is required</div>
+                        
+                        <div class="password-requirements">
+                            <div class="requirement" id="req-length">
+                                <i class="fas fa-circle"></i>
+                                <span>At least 8 characters</span>
+                            </div>
+                            <div class="requirement" id="req-uppercase">
+                                <i class="fas fa-circle"></i>
+                                <span>At least one uppercase letter</span>
+                            </div>
+                            <div class="requirement" id="req-lowercase">
+                                <i class="fas fa-circle"></i>
+                                <span>At least one lowercase letter</span>
+                            </div>
+                            <div class="requirement" id="req-number">
+                                <i class="fas fa-circle"></i>
+                                <span>At least one number</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="confirm-password" class="form-input" placeholder="Confirm your new password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="confirm-error">Passwords do not match</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="reset-button" disabled>Reset Password</button>
+                </form>
+                
+                <div class="success-message" id="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="success-title">Password Reset Successful</h2>
+                    <p class="success-text">Your password has been reset successfully. You can now log in with your new password.</p>
+                    <a href="login.html" class="btn btn-primary">Go to Login</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 LuxStay. All rights reserved. <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resetForm = document.getElementById('reset-form');
+            const passwordInput = document.getElementById('new-password');
+            const confirmInput = document.getElementById('confirm-password');
+            const passwordMeter = document.getElementById('password-meter');
+            const passwordText = document.getElementById('password-strength-text');
+            const resetButton = document.getElementById('reset-button');
+            const successMessage = document.getElementById('success-message');
+            
+            // Password requirements elements
+            const reqLength = document.getElementById('req-length');
+            const reqUppercase = document.getElementById('req-uppercase');
+            const reqLowercase = document.getElementById('req-lowercase');
+            const reqNumber = document.getElementById('req-number');
+            
+            // Password visibility toggle
+            const toggleButtons = document.querySelectorAll('.password-toggle');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.previousElementSibling;
+                    const icon = button.querySelector('i');
+                    
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+            
+            // Password strength and requirements check
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = 0;
+                let feedback = '';
+                
+                // Check requirements
+                const hasLength = password.length >= 8;
+                const hasUppercase = /[A-Z]/.test(password);
+                const hasLowercase = /[a-z]/.test(password);
+                const hasNumber = /[0-9]/.test(password);
+                
+                // Update requirement indicators
+                updateRequirement(reqLength, hasLength);
+                updateRequirement(reqUppercase, hasUppercase);
+                updateRequirement(reqLowercase, hasLowercase);
+                updateRequirement(reqNumber, hasNumber);
+                
+                if (password.length === 0) {
+                    passwordMeter.style.width = '0%';
+                    passwordText.textContent = '';
+                    resetButton.disabled = true;
+                    return;
+                }
+                
+                // Calculate strength
+                if (hasLength) strength += 25;
+                if (hasUppercase) strength += 25;
+                if (hasLowercase) strength += 25;
+                if (hasNumber) strength += 25;
+                
+                // Update meter
+                passwordMeter.style.width = `${strength}%`;
+                
+                // Update color and text
+                if (strength <= 25) {
+                    passwordMeter.style.backgroundColor = '#e63946';
+                    feedback = 'Weak';
+                } else if (strength <= 50) {
+                    passwordMeter.style.backgroundColor = '#ffb703';
+                    feedback = 'Fair';
+                } else if (strength <= 75) {
+                    passwordMeter.style.backgroundColor = '#8ac926';
+                    feedback = 'Good';
+                } else {
+                    passwordMeter.style.backgroundColor = '#06d6a0';
+                    feedback = 'Strong';
+                }
+                
+                passwordText.textContent = feedback;
+                
+                // Enable/disable button based on all requirements being met
+                resetButton.disabled = !(hasLength && hasUppercase && hasLowercase && hasNumber);
+                
+                // Check confirm password match if it has a value
+                if (confirmInput.value) {
+                    checkPasswordMatch();
+                }
+            });
+            
+            // Check if passwords match
+            confirmInput.addEventListener('input', checkPasswordMatch);
+            
+            function checkPasswordMatch() {
+                const password = passwordInput.value;
+                const confirm = confirmInput.value;
+                const errorElement = document.getElementById('confirm-error');
+                
+                if (confirm && password !== confirm) {
+                    confirmInput.classList.add('error');
+                    errorElement.classList.add('visible');
+                    resetButton.disabled = true;
+                } else {
+                    confirmInput.classList.remove('error');
+                    errorElement.classList.remove('visible');
+                    
+                    // Only enable if password meets requirements
+                    const hasLength = password.length >= 8;
+                    const hasUppercase = /[A-Z]/.test(password);
+                    const hasLowercase = /[a-z]/.test(password);
+                    const hasNumber = /[0-9]/.test(password);
+                    
+                    resetButton.disabled = !(hasLength && hasUppercase && hasLowercase && hasNumber && confirm);
+                }
+            }
+            
+            // Update requirement status
+            function updateRequirement(element, isMet) {
+                if (isMet) {
+                    element.classList.add('met');
+                    element.querySelector('i').className = 'fas fa-check-circle';
+                } else {
+                    element.classList.remove('met');
+                    element.querySelector('i').className = 'fas fa-circle';
+                }
+            }
+            
+            // Form submission
+            resetForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real app, you would submit the form to your backend here
+                // For demo purposes, we'll just show the success message
+                
+                // Hide the form
+                resetForm.style.display = 'none';
+                
+                // Show success message
+                successMessage.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
